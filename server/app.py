@@ -58,6 +58,57 @@ init_db()
 def health():
     return jsonify({"status": "ok"})
 
+def parse_float(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+@app.route("/upload", methods=["POST"])
+def upload():
+    try:
+        if "audio" not in request.files:
+            return jsonify({"error": "No audio file"}), 400
+
+        file = request.files["audio"]
+        lat = parse_float(request.form.get("lat"))
+        lng = parse_float(request.form.get("lng"))
+
+        # Save uploaded file
+        import uuid
+        raw_filename = f"{uuid.uuid4().hex}.webm"
+        raw_path = os.path.join(UPLOAD_FOLDER, raw_filename)
+        file.save(raw_path)
+
+        # Placeholder for audio classification (will be added later)
+        results = [{"label": "Sound detected", "confidence": 0.9}]
+
+        if lat is not None and lng is not None:
+            save_to_db(lat, lng, results)
+
+        response = {"results": results}
+        if lat is not None:
+            response["lat"] = lat
+        if lng is not None:
+            response["lng"] = lng
+
+        # Cleanup
+        try:
+            os.remove(raw_path)
+        except:
+            pass
+
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({"error": f"Server error: {str(e)}"}), 500
+
+@app.route("/history", methods=["GET"])
+def history():
+    data = fetch_history()
+    return jsonify({"history": data})
+
 # ---------------- Run ----------------
 if __name__ == "__main__":
     app.run(debug=True)
+
