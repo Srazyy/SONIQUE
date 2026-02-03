@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
+import sqlite3
 
 # ---------------- Flask Setup ----------------
 app = Flask(__name__)
@@ -8,6 +9,50 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+DB_PATH = "sounds.db"
+
+# ---------------- Database Setup ----------------
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS sounds (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lat REAL,
+            lng REAL,
+            label TEXT,
+            confidence REAL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+def save_to_db(lat, lng, results):
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    for r in results:
+        c.execute(
+            "INSERT INTO sounds (lat, lng, label, confidence) VALUES (?, ?, ?, ?)",
+            (lat, lng, r["label"], r["confidence"])
+        )
+    conn.commit()
+    conn.close()
+
+def fetch_history():
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("SELECT lat, lng, label, confidence, timestamp FROM sounds")
+    rows = c.fetchall()
+    conn.close()
+    return [
+        {"lat": row[0], "lng": row[1], "label": row[2], "confidence": row[3], "timestamp": row[4]}
+        for row in rows
+    ]
+
+# Init DB at startup
+init_db()
 
 @app.route("/health", methods=["GET"])
 def health():
