@@ -1,6 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
+import uuid
+import tensorflow as tf
+import tensorflow_hub as hub
+import numpy as np
+import librosa
+import csv
+import subprocess
 import sqlite3
 
 # ---------------- Flask Setup ----------------
@@ -54,6 +61,80 @@ def fetch_history():
 # Init DB at startup
 init_db()
 
+# ---------------- YAMNet Setup ----------------
+yamnet_model_handle = "https://tfhub.dev/google/yamnet/1"
+yamnet_model = hub.load(yamnet_model_handle)
+
+def class_names_from_csv(class_map_csv_path):
+    class_names = []
+    with tf.io.gfile.GFile(class_map_csv_path) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            class_names.append(row["display_name"])
+    return class_names
+
+class_map_path = yamnet_model.class_map_path().numpy().decode("utf-8")
+class_names = class_names_from_csv(class_map_path)
+
+# ---------------- Audio Utils ----------------
+def convert_to_wav(input_path, output_path):
+    try:
+        subprocess.run([
+            "ffmpeg", "-y", "-i", input_path,
+            "-ar", "16000", "-ac", "1", output_path
+        ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return True
+    except Exception as e:
+        print("❌ FFmpeg conversion failed:", str(e))
+        return False
+
+def classify_audio(file_path, top_k=3):
+    try:
+        print(f"🎧 Loading audio from: {file_path}")
+        
+        # Load audio with librosa
+        waveform, sr = librosa.load(file_path, sr=16000, mono=True)
+        print(f"✅ Loaded audio: shape={waveform.shape}, sr={sr}")
+        
+        # Check if audio is empty or too short
+        if len(waveform) == 0:
+            return [{"label": "No audio detected", "confidence": 0.0}]
+        
+        if len(waveform) < 16000:  # Less than 1 second
+            print("⚠️ Audio is very short, padding...")
+            waveform = np.pad(waveform, (0, 16000 - len(waveform)))
+
+        # Normalize
+        waveform = waveform.astype(np.float32)
+        max_val = np.abs(waveform).max()
+        if max_val > 0:
+            waveform = waveform / max_val
+        
+        print("🤖 Running YAMNet inference...")
+        
+        # Run inference
+        scores, embeddings, spectrogram = yamnet_model(waveform)
+        print(f"✅ Inference complete: scores shape={scores.shape}")
+
+        # Get mean scores
+        mean_scores = tf.reduce_mean(scores, axis=0).numpy()
+
+        # Get top K results
+        top_indices = mean_scores.argsort()[-top_k:][::-1]
+        results = [
+            {"label": class_names[i], "confidence": float(mean_scores[i])}
+            for i in top_indices
+        ]
+
+        print(f"🎯 Top predictions: {results}")
+        return results
+        
+    except Exception as e:
+        print(f"🔥 Error in classify_audio: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return [{"label": f"Classification error", "confidence": 0.0}]
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
@@ -74,17 +155,33 @@ def upload():
         lat = parse_float(request.form.get("lat"))
         lng = parse_float(request.form.get("lng"))
 
-        # Save uploaded file
-        import uuid
+        print(f"📍 Received upload: lat={lat}, lng={lng}")
+
         raw_filename = f"{uuid.uuid4().hex}.webm"
         raw_path = os.path.join(UPLOAD_FOLDER, raw_filename)
         file.save(raw_path)
+        print(f"✅ Saved raw file: {raw_path}")
 
-        # Placeholder for audio classification (will be added later)
-        results = [{"label": "Sound detected", "confidence": 0.9}]
+        wav_filename = raw_filename.replace(".webm", ".wav")
+        wav_path = os.path.join(UPLOAD_FOLDER, wav_filename)
+        
+        if not convert_to_wav(raw_path, wav_path):
+            print("❌ Conversion failed")
+            return jsonify({"error": "Failed to convert audio"}), 500
+
+        print(f"✅ Converted to WAV: {wav_path}")
+
+        # Check if WAV file exists and has content
+        if not os.path.exists(wav_path) or os.path.getsize(wav_path) == 0:
+            return jsonify({"error": "WAV file is empty or doesn't exist"}), 500
+
+        print("🎵 Starting classification...")
+        results = classify_audio(wav_path)
+        print(f"✅ Classification results: {results}")
 
         if lat is not None and lng is not None:
             save_to_db(lat, lng, results)
+            print("💾 Saved to database")
 
         response = {"results": results}
         if lat is not None:
@@ -92,15 +189,19 @@ def upload():
         if lng is not None:
             response["lng"] = lng
 
-        # Cleanup
+        # Cleanup files
         try:
             os.remove(raw_path)
+            os.remove(wav_path)
         except:
             pass
 
         return jsonify(response)
 
     except Exception as e:
+        print(f"🔥 Server error: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": f"Server error: {str(e)}"}), 500
 
 @app.route("/history", methods=["GET"])
@@ -111,4 +212,3 @@ def history():
 # ---------------- Run ----------------
 if __name__ == "__main__":
     app.run(debug=True)
-
