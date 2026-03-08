@@ -31,7 +31,7 @@ const FutureVision = () => {
             <Sparkles className="w-4 h-4 text-accent animate-pulse-glow" />
             <span className="text-sm font-medium text-accent">Coming Soon</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             The <span className="text-accent">Future</span> of Urban Sound
           </h2>
@@ -43,7 +43,7 @@ const FutureVision = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
           {visionItems.map((item, index) => {
             const Icon = item.icon;
-            
+
             return (
               <div
                 key={index}
@@ -52,7 +52,7 @@ const FutureVision = () => {
                 <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:glow-lime transition-all">
                   <Icon className="w-8 h-8 text-accent" />
                 </div>
-                
+
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
@@ -65,14 +65,14 @@ const FutureVision = () => {
             Imagine a World Where...
           </h3>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Every city uses real-time acoustic data to reduce noise pollution, 
-            improve public health, and create more peaceful urban environments. 
-            Where communities are empowered with data to advocate for change, 
+            Every city uses real-time acoustic data to reduce noise pollution,
+            improve public health, and create more peaceful urban environments.
+            Where communities are empowered with data to advocate for change,
             and where technology serves the greater good of sustainable living.
           </p>
           <div className="inline-flex items-center gap-2 text-primary font-semibold">
             <Sparkles className="w-5 h-5 animate-pulse-glow" />
-            <span>That's the CrowdNoise vision</span>
+            <span>That's the SONIQUE vision</span>
           </div>
         </div>
       </div>

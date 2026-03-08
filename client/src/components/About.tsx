@@ -2,18 +2,18 @@ import { Brain, Users, Globe } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="py-24 bg-card">
+    <section id="about" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Listening to <span className="text-primary">Cities</span>, 
+              Listening to <span className="text-primary">Cities</span>,
               Powered by <span className="text-accent">AI</span>
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              CrowdNoise harnesses the power of community and artificial intelligence 
-              to create real-time noise maps. Using crowdsourced audio recordings and 
-              YAMNet machine learning, we detect and classify environmental sounds to 
+              SONIQUE harnesses the power of community and artificial intelligence
+              to create real-time noise maps. Using crowdsourced audio recordings and
+              YAMNet machine learning, we detect and classify environmental sounds to
               help build smarter, quieter cities.
             </p>
           </div>
@@ -25,7 +25,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Smart City Planning</h3>
               <p className="text-muted-foreground">
-                Data-driven insights help urban planners identify noise pollution 
+                Data-driven insights help urban planners identify noise pollution
                 hotspots and make informed decisions about city infrastructure.
               </p>
             </div>
@@ -36,7 +36,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Citizen Science</h3>
               <p className="text-muted-foreground">
-                Everyone can contribute. Join thousands of community members mapping 
+                Everyone can contribute. Join thousands of community members mapping
                 the acoustic environment of their neighborhoods.
               </p>
             </div>
@@ -47,7 +47,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Environmental Research</h3>
               <p className="text-muted-foreground">
-                Our open dataset enables researchers worldwide to study urban sound 
+                Our open dataset enables researchers worldwide to study urban sound
                 patterns and their impact on health and well-being.
               </p>
             </div>

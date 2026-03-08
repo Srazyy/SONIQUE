@@ -218,6 +218,24 @@ npm run dev
 
 ---
 
+## 🎨 Software Design
+
+SONIQUE follows a **Layered + Client-Server architecture**, separating the React frontend and Flask backend into independent layers connected solely through REST API endpoints. This design ensures **low coupling** (frontend and backend can be developed, deployed, and scaled independently via Docker), **high cohesion** (each component handles a single responsibility), and **modularity** (features like audio recording, ML classification, and map visualization are self-contained modules).
+
+### Architecture Diagrams
+
+- [📐 Layered Architecture Diagram (Draw.io source)](docs/design/sonique_layered_architecture.drawio)
+- [🔗 Component Interaction Diagram (Draw.io source)](docs/design/sonique_component_diagram.drawio)
+
+![Layered Architecture](docs/design/sonique_layered_architecture.drawio)
+
+### Design Documentation
+
+- [📄 Full Software Design Document](docs/design/SOFTWARE_DESIGN_DOCUMENT.md) — Design principles, architecture rationale, UI design, and key decisions
+- [🖼️ UI Wireframes](docs/design/) — 6 screens: Home, Recorder, Map, Results, History, Mobile
+
+---
+
 ## 📖 Documentation
 
 - [Architecture Diagram](docs/ARCHITECTURE.md)

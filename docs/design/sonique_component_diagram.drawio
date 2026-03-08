@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-03-07" agent="draw.io" version="22.1.2" type="device">
+  <diagram name="SONIQUE Component Diagram" id="sonique-component">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;SONIQUE — Component Interaction Diagram&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="15" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ====== FRONTEND PACKAGE ====== -->
+        <mxCell id="fe-pkg" value="&lt;&lt;package&gt;&gt;&lt;br&gt;&lt;b&gt;client/ (React Frontend)&lt;/b&gt;" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;verticalAlign=top;spacingTop=5;fontSize=12;tabWidth=110;tabHeight=30;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="30" y="60" width="560" height="470" as="geometry" />
+        </mxCell>
+
+        <!-- Pages -->
+        <mxCell id="pages-pkg" value="pages/" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#6c8ebf;verticalAlign=top;fontSize=11;tabWidth=60;tabHeight=20;tabPosition=left;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="110" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="index-page" value="Index.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="65" y="145" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="notfound-page" value="NotFound.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="155" y="145" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Components -->
+        <mxCell id="comp-pkg" value="components/" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#6c8ebf;verticalAlign=top;fontSize=11;tabWidth=85;tabHeight=20;tabPosition=left;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="210" width="530" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c-hero" value="Hero.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="65" y="245" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-recorder" value="Recorder.tsx&lt;br&gt;&lt;i&gt;(Audio capture)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6F7;strokeColor=#1565C0;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c-livemap" value="LiveMap.tsx&lt;br&gt;&lt;i&gt;(Map + Markers + Heatmap)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6F7;strokeColor=#1565C0;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="240" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c-features" value="Features.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="430" y="245" width="85" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-about" value="About.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="65" y="295" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-howit" value="HowItWorks.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="295" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-team" value="Team.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="295" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-future" value="FutureVision.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="345" y="295" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-footer" value="Footer.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="455" y="295" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-ui" value="ui/ (shadcn)&lt;br&gt;&lt;i&gt;button, card, toast...&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#6c8ebf;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="65" y="345" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-star" value="StarBorder.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBD7F0;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="215" y="345" width="95" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Hooks -->
+        <mxCell id="hooks-pkg" value="hooks/" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#43A047;verticalAlign=top;fontSize=11;tabWidth=55;tabHeight=20;tabPosition=left;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="410" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="h-mobile" value="use-mobile.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#43A047;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="65" y="440" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="h-toast" value="use-toast.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#43A047;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="175" y="440" width="100" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- App entry -->
+        <mxCell id="app-entry" value="App.tsx&lt;br&gt;&lt;i&gt;(Routes + Providers)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="420" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="main-entry" value="main.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="475" y="425" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ====== BACKEND PACKAGE ====== -->
+        <mxCell id="be-pkg" value="&lt;&lt;package&gt;&gt;&lt;br&gt;&lt;b&gt;server/ (Flask Backend)&lt;/b&gt;" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;verticalAlign=top;spacingTop=5;fontSize=12;tabWidth=110;tabHeight=30;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="660" y="60" width="580" height="470" as="geometry" />
+        </mxCell>
+
+        <!-- app.py sections -->
+        <mxCell id="flask-setup" value="&lt;b&gt;Flask Setup&lt;/b&gt;&lt;br&gt;app = Flask(...)&lt;br&gt;CORS(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="120" width="140" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db-module" value="&lt;b&gt;Database Module&lt;/b&gt;&lt;br&gt;init_db()&lt;br&gt;save_to_db()&lt;br&gt;fetch_history()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8BBD0;strokeColor=#b85450;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="690" y="195" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="yamnet-module" value="&lt;b&gt;YAMNet Module&lt;/b&gt;&lt;br&gt;hub.load(yamnet/1)&lt;br&gt;class_names_from_csv()&lt;br&gt;classify_audio()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#d6b656;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="860" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="audio-module" value="&lt;b&gt;Audio Utils&lt;/b&gt;&lt;br&gt;convert_to_wav()&lt;br&gt;(ffmpeg subprocess)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="860" y="210" width="160" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="routes-module" value="&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;GET /health&lt;br&gt;POST /upload&lt;br&gt;GET /history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#82b366;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="120" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="parse-module" value="parse_float()&lt;br&gt;&lt;i&gt;Input validation&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="210" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Backend deps -->
+        <mxCell id="deps-pkg" value="Dependencies" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;verticalAlign=top;fontSize=11;tabWidth=85;tabHeight=20;tabPosition=left;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="290" width="530" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-flask" value="Flask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="705" y="320" width="55" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-cors" value="flask-cors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="770" y="320" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-tf" value="tensorflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="320" width="75" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-tfhub" value="tf_hub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="935" y="320" width="55" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-librosa" value="librosa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="320" width="55" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-np" value="numpy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="320" width="55" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-sqlite" value="sqlite3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFECB3;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="320" width="55" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Database -->
+        <mxCell id="db" value="SQLite&lt;br&gt;&lt;b&gt;sounds.db&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#E1BEE7;strokeColor=#7B1FA2;strokeWidth=2;fontSize=12;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="db-schema" value="&lt;b&gt;sounds&lt;/b&gt; table:&lt;br&gt;id | lat | lng | label | confidence | timestamp" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#7B1FA2;" vertex="1" parent="1">
+          <mxGeometry x="830" y="420" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- File system -->
+        <mxCell id="uploads" value="uploads/&lt;br&gt;&lt;i&gt;Temp audio files&lt;/i&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#FFF9C4;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="400" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ====== DOCKER LAYER ====== -->
+        <mxCell id="docker-pkg" value="Docker Compose" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;strokeWidth=2;verticalAlign=top;fontSize=12;tabWidth=110;tabHeight=25;tabPosition=left;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="560" width="1210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d-fe" value="frontend&lt;br&gt;(:3000→80)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="595" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d-nginx" value="Nginx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="180" y="595" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d-be" value="backend&lt;br&gt;(:5001→5000)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="595" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d-net" value="sonique-network (bridge)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="390" y="595" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d-vol" value="Volumes: uploads/, sounds.db" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#E65100;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="595" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ====== INTERACTION ARROWS ====== -->
+        <!-- Index uses components -->
+        <mxCell id="arr1" value="renders" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#1565C0;dashed=1;fontSize=9;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="index-page" target="comp-pkg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Recorder → API (upload) -->
+        <mxCell id="arr2" value="POST /upload&lt;br&gt;(audio + coords)" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;strokeColor=#E65100;fontSize=9;fontColor=#E65100;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c-recorder" target="routes-module">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="260" />
+              <mxPoint x="630" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LiveMap → API (history) -->
+        <mxCell id="arr3" value="GET /history" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;strokeColor=#43A047;fontSize=9;fontColor=#43A047;exitX=1;exitY=0.5;entryX=0;entryY=0.8;" edge="1" parent="1" source="c-livemap" target="routes-module">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="260" />
+              <mxPoint x="640" y="176" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Routes → YAMNet -->
+        <mxCell id="arr4" value="classify" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#d6b656;fontSize=9;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="routes-module" target="yamnet-module">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Routes → Audio Utils -->
+        <mxCell id="arr5" value="convert" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#E65100;fontSize=9;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="routes-module" target="audio-module">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Routes → DB Module -->
+        <mxCell id="arr6" value="save/fetch" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#b85450;fontSize=9;exitX=0;exitY=1;entryX=1;entryY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="routes-module" target="db-module">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- DB Module → SQLite -->
+        <mxCell id="arr7" value="SQL" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;strokeColor=#7B1FA2;fontSize=9;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="db-module" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- App.tsx uses Router -->
+        <mxCell id="arr8" value="routes" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#C62828;dashed=1;fontSize=9;exitX=0.5;exitY=0;entryX=0.7;entryY=1;" edge="1" parent="1" source="app-entry" target="pages-pkg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Author -->
+        <mxCell id="author" value="&lt;i&gt;Shresth Kumar Gupta&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=10;fontColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="645" width="150" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

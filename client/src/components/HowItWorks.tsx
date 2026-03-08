@@ -29,7 +29,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
@@ -50,9 +50,9 @@ const HowItWorks = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isAccent = step.color === "accent";
-            
+
             return (
-              <div 
+              <div
                 key={index}
                 className="relative group"
                 style={{ animationDelay: `${index * 150}ms` }}
@@ -61,20 +61,19 @@ const HowItWorks = () => {
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-20 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary to-accent opacity-30" />
                 )}
-                
+
                 <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 relative z-10">
-                  <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 ${
-                    isAccent 
-                      ? 'bg-accent/10 group-hover:glow-lime' 
+                  <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 ${isAccent
+                      ? 'bg-accent/10 group-hover:glow-lime'
                       : 'bg-primary/10 group-hover:glow-teal'
-                  } transition-all`}>
+                    } transition-all`}>
                     <Icon className={`w-10 h-10 ${isAccent ? 'text-accent' : 'text-primary'}`} />
                   </div>
-                  
+
                   <div className="absolute top-6 right-6 text-5xl font-bold text-primary/10">
                     {index + 1}
                   </div>
-                  
+
                   <h3 className="text-2xl font-semibold mb-3">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>

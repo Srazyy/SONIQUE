@@ -9,14 +9,14 @@ const Team = () => {
             <Heart className="w-4 h-4 text-primary animate-pulse-glow" />
             <span className="text-sm font-medium text-primary">Built with passion</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Built by <span className="text-primary">Innovators</span>
           </h2>
-          
+
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            CrowdNoise was created by a team of urban sustainability enthusiasts, 
-            data scientists, and community advocates passionate about making cities 
+            SONIQUE was created by a team of urban sustainability enthusiasts,
+            data scientists, and community advocates passionate about making cities
             more livable through technology and collaboration.
           </p>
 
@@ -36,9 +36,9 @@ const Team = () => {
           </div>
 
           <div className="flex items-center justify-center gap-4">
-            <a 
-              href="https://github.com/crowdnoise" 
-              target="_blank" 
+            <a
+              href="https://github.com/Srazyy/SONIQUE"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary hover:bg-secondary/80 transition-colors border border-border"
             >
