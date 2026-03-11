@@ -61,15 +61,18 @@ The application is decomposed into independent, self-contained modules:
 src/
 ├── pages/          → Route-level containers (Index, NotFound)
 ├── components/     → Feature modules
+│   ├── Navbar.tsx          → Sticky navigation bar
 │   ├── Hero.tsx            → Landing section
 │   ├── Recorder.tsx        → Audio capture + upload
 │   ├── LiveMap.tsx         → Map visualization + markers + heatmap
 │   ├── Features.tsx        → Feature showcase
+│   ├── Statistics.tsx      → Animated metrics dashboard
 │   ├── About.tsx           → Project description
 │   ├── HowItWorks.tsx      → User guide
 │   ├── Team.tsx            → Team info
+│   ├── TechStack.tsx       → Technology stack showcase
 │   ├── FutureVision.tsx    → Roadmap
-│   ├── Footer.tsx          → Footer navigation
+│   ├── Footer.tsx          → Footer navigation + contact form
 │   └── ui/                 → Reusable UI primitives (shadcn/ui)
 └── hooks/          → Shared logic
     ├── use-mobile.tsx      → Responsive breakpoint detection
@@ -202,48 +205,50 @@ User sees classified sound on interactive map
 
 ### 4.1 Screen Overview
 
-The application consists of 6 primary screens/sections, all accessible on a single-page layout:
+The application consists of 6 primary screens/sections, all accessible on a single-page layout with a sticky navigation bar:
 
 | # | Screen | Purpose | Key Elements |
 |---|--------|---------|--------------|
-| 1 | **Home / Hero** | Landing page, first impression | Animated title, CTA button, background gradient |
-| 2 | **Recorder** | Audio capture interface | Record button, waveform visualizer, status indicator |
-| 3 | **Map View** | Spatial visualization | Leaflet map, sound markers, heatmap toggle |
-| 4 | **Results** | Classification display | Sound label, confidence bars, top-3 predictions |
-| 5 | **History** | Past recordings list | Timestamped entries, sound type, location data |
-| 6 | **Mobile View** | Responsive layout | Touch-optimized controls, stacked layout |
+| 1 | **Home / Hero** | Landing page, first impression | Sticky navbar, animated title, CTA buttons, stat counters, background gradient |
+| 2 | **Noise Map + Recorder** | Audio capture & spatial visualization | Record button, Leaflet map, heatmap overlay, time filters, export options |
+| 3 | **Features** | Feature showcase | 4 feature cards: AI Classification, Geolocation, Data Viz, Citizen-driven |
+| 4 | **Statistics Dashboard** | Platform metrics & insights | Animated counter cards, top sound categories bar chart |
+| 5 | **Tech Stack** | Technology showcase | Frontend/Backend/Infrastructure cards with color-coded tech badges |
+| 6 | **Footer / Contact** | Contact form & links | Contact form, social links, quick navigation, copyright |
 
-### 4.2 Wireframes
+### 4.2 Application Screenshots
 
-Below are the wireframe designs for each screen:
+Below are screenshots of the live running application:
 
 #### Screen 1: Home Page
-![Home Page Wireframe](wireframe_home_1770123923515.png)
+![Home Page](screen_hero_home.png)
 
-#### Screen 2: Audio Recorder
-![Recorder Wireframe](wireframe_recorder_1770123955501.png)
+#### Screen 2: Noise Map + Recorder
+![Noise Map & Recorder](screen_noise_map.png)
 
-#### Screen 3: Map View
-![Map View Wireframe](wireframe_map_1770123982376.png)
+#### Screen 3: Features
+![Features](screen_features.png)
 
-#### Screen 4: Classification Results
-![Results Wireframe](wireframe_results_1770124032534.png)
+#### Screen 4: Statistics Dashboard
+![Statistics Dashboard](screen_statistics.png)
 
-#### Screen 5: Sound History
-![History Wireframe](wireframe_history_1770124014026.png)
+#### Screen 5: Tech Stack
+![Tech Stack](screen_tech_stack.png)
 
-#### Screen 6: Mobile Responsive
-![Mobile View Wireframe](wireframe_mobile_1770124050064.png)
+#### Screen 6: Footer / Contact
+![Footer & Contact](screen_footer_contact.png)
 
 ### 4.3 UI Design Rationale
 
 | Design Choice | Implementation | Why |
 |--------------|----------------|-----|
 | **Dark theme** | Tailwind dark palette + shadcn/ui dark mode components | Reduces eye strain for extended use; professional appearance; better contrast for map visualization |
+| **Sticky glassmorphism navbar** | `backdrop-blur-xl`, scroll-aware background opacity, mobile hamburger menu | Persistent navigation improves user orientation; glassmorphism adds modern polish; mobile menu ensures touch accessibility |
 | **Component library (shadcn/ui)** | Buttons, cards, toasts, tooltips all from shadcn/ui | Ensures visual consistency across all screens; accessible by default (ARIA attributes); rapid development |
 | **Responsive design** | Tailwind breakpoints (`sm`, `md`, `lg`) + `use-mobile` hook | Field researchers use the app on mobile phones; map must be touch-friendly |
+| **Animated counters** | IntersectionObserver + `requestAnimationFrame` with ease-out cubic | Statistics section engages users with scroll-triggered animations; counters provide instant credibility |
 | **Visual feedback** | Real-time waveform during recording; toast notifications for errors; loading states during API calls | Users need immediate confirmation that recording is active and processing is happening |
-| **Single-page layout** | All sections rendered on one scrollable page via `Index.tsx` | Smoother UX; no page reload delays; all features accessible without navigation confusion |
+| **Single-page layout** | All sections rendered on one scrollable page via `Index.tsx` with smooth-scroll navigation | Smoother UX; no page reload delays; all features accessible without navigation confusion |
 | **Leaflet over Google Maps** | Open-source, no API key required, free tiles from OpenStreetMap | No cost barrier; works offline with cached tiles; customizable markers and heatmap overlay |
 
 ---
