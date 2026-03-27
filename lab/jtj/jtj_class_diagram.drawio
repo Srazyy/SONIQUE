@@ -1,0 +1,263 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="JTJ_Analysis_Class_Diagram" id="jtj_class_01">
+    <mxGraphModel dx="1600" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="JTJ — Analysis-Level Class Diagram" style="text;html=1;fontSize=18;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Customer ===== -->
+        <mxCell id="c_cust" value="&lt;b&gt;Customer&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="230" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cust_attr" value="- customerNumber : String {PK}&#10;- customerName : String&#10;- address : String&#10;- contactNumber : String&#10;- dateRegistered : Date&#10;- customerType : Enum {ONE-OFF, REGULAR, BOTH}" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_cust">
+          <mxGeometry y="30" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_cust_ops" value="+ requestBooking() : Booking&#10;+ agreeTerms(date, price) : void&#10;+ signBookingForm(form) : SignedForm&#10;+ submitPayment(invoice, amount) : Payment&#10;+ getBookingHistory() : List&lt;Booking&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_cust">
+          <mxGeometry y="135" width="230" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Property ===== -->
+        <mxCell id="c_prop" value="&lt;b&gt;Property&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="c_prop_attr" value="- propertyId : String {PK}&#10;- address : String&#10;- postcode : String&#10;- propertyType : String&#10;- accessNotes : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_prop">
+          <mxGeometry y="30" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_prop_ops" value="+ getCleaningHistory() : List&lt;Job&gt;&#10;+ getCurrentBooking() : Booking" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_prop">
+          <mxGeometry y="115" width="230" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Booking ===== -->
+        <mxCell id="c_book" value="&lt;b&gt;Booking&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="260" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="c_book_attr" value="- bookingNumber : String {PK}&#10;- customerNumber : String {FK}&#10;- propertyAddress : String&#10;- jobType : Enum {ONE-OFF, REGULAR}&#10;- agreedDate : Date&#10;- agreedPrice : Decimal&#10;- hourlyRate : Decimal&#10;- cleaningDay : String&#10;- status : Enum {BOOKED, COMPLETED, INVOICED, PAID}" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_book">
+          <mxGeometry y="30" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c_book_ops" value="+ createBooking(details) : Booking&#10;+ updateStatus(newStatus) : void&#10;+ getBookingForm() : BookingForm&#10;+ isRegular() : Boolean&#10;+ calculateCost(hours) : Decimal" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_book">
+          <mxGeometry y="165" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: BookingForm ===== -->
+        <mxCell id="c_form" value="&lt;b&gt;BookingForm&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_form_attr" value="- formId : String {PK}&#10;- bookingNumber : String {FK}&#10;- copyType : Enum {CUSTOMER, OFFICE_1, OFFICE_2}&#10;- isSigned : Boolean&#10;- signatureDate : Date&#10;- customerSignature : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_form">
+          <mxGeometry y="30" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_form_ops" value="+ generateCopies() : List&lt;BookingForm&gt;&#10;+ sign(signature) : void&#10;+ returnToOffice() : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_form">
+          <mxGeometry y="125" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Cleaner ===== -->
+        <mxCell id="c_clean" value="&lt;b&gt;Cleaner&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="780" y="80" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_clean_attr" value="- cleanerId : String {PK}&#10;- cleanerName : String&#10;- address : String&#10;- contactNumber : String&#10;- weeklyHours : Decimal" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_clean">
+          <mxGeometry y="30" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_clean_ops" value="+ getWeeklySchedule(week) : Schedule&#10;+ recordHours(date, hours) : void&#10;+ getHoursWorked(week) : Decimal&#10;+ isAvailable(date) : Boolean&#10;+ assignToJob(booking) : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_clean">
+          <mxGeometry y="115" width="240" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Job ===== -->
+        <mxCell id="c_job" value="&lt;b&gt;Job&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="780" y="400" width="240" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="c_job_attr" value="- jobId : String {PK}&#10;- bookingNumber : String {FK}&#10;- cleanerId : String {FK}&#10;- dateWorked : Date&#10;- hoursWorked : Decimal&#10;- isCompleted : Boolean&#10;- completionDate : Date" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_job">
+          <mxGeometry y="30" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_job_ops" value="+ startJob() : void&#10;+ completeJob(hours) : void&#10;+ getSignedForm() : BookingForm" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_job">
+          <mxGeometry y="135" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Invoice ===== -->
+        <mxCell id="c_inv" value="&lt;b&gt;Invoice&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="80" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inv_attr" value="- invoiceNumber : String {PK}&#10;- customerNumber : String {FK}&#10;- invoiceDate : Date&#10;- totalAmount : Decimal&#10;- invoiceType : Enum {ONE-OFF, MONTHLY}&#10;- status : Enum {UNPAID, PAID}" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_inv">
+          <mxGeometry y="30" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_inv_ops" value="+ generateOneOffInvoice(booking) : Invoice&#10;+ generateMonthlyInvoice(bookings) : Invoice&#10;+ addLineItem(description, amount) : void&#10;+ calculateTotal() : Decimal&#10;+ markPaid(paymentDate) : void&#10;+ printInvoice() : void&#10;+ generateReceipt() : Receipt" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_inv">
+          <mxGeometry y="125" width="260" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: InvoiceLineItem ===== -->
+        <mxCell id="c_line" value="&lt;b&gt;InvoiceLineItem&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="400" width="260" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="c_line_attr" value="- lineId : Integer {PK}&#10;- invoiceNumber : String {FK}&#10;- description : String&#10;- hours : Decimal&#10;- rate : Decimal&#10;- amount : Decimal" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_line">
+          <mxGeometry y="30" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_line_ops" value="+ calculateAmount() : Decimal" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_line">
+          <mxGeometry y="125" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Schedule ===== -->
+        <mxCell id="c_sched" value="&lt;b&gt;Schedule&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="680" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sched_attr" value="- scheduleId : String {PK}&#10;- cleanerId : String {FK}&#10;- weekCommencing : Date&#10;- entries : List&lt;ScheduleEntry&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_sched">
+          <mxGeometry y="30" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sched_ops" value="+ generateForWeek(cleaner, week) : Schedule&#10;+ printSchedule() : void&#10;+ addEntry(day, time, address) : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_sched">
+          <mxGeometry y="105" width="230" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Payment ===== -->
+        <mxCell id="c_pay" value="&lt;b&gt;Payment&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="640" width="260" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pay_attr" value="- paymentId : String {PK}&#10;- invoiceNumber : String {FK}&#10;- paymentDate : Date&#10;- amount : Decimal&#10;- paymentMethod : Enum {CASH, CHEQUE, TRANSFER}" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_pay">
+          <mxGeometry y="30" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pay_ops" value="+ processPayment() : void&#10;+ issueReceipt() : Receipt" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_pay">
+          <mxGeometry y="115" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Appointment ===== -->
+        <mxCell id="c_appt" value="&lt;b&gt;Appointment&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="700" width="260" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_appt_attr" value="- appointmentId : String {PK}&#10;- customerNumber : String {FK}&#10;- appointmentDate : Date&#10;- appointmentTime : Time&#10;- propertyAddress : String&#10;- notes : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_appt">
+          <mxGeometry y="30" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_appt_ops" value="+ scheduleAppointment() : void&#10;+ printSchedule() : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_appt">
+          <mxGeometry y="125" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RELATIONSHIPS ===== -->
+
+        <!-- Customer 1 ——* Booking -->
+        <mxCell id="r1" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_cust" target="c_book">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r1_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Customer 1 ——* Property -->
+        <mxCell id="r2" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_cust" target="c_prop">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r2_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Booking 1 ——3 BookingForm -->
+        <mxCell id="r3" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_book" target="c_form">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r3_r" value="3" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Booking 1 ——* Job -->
+        <mxCell id="r4" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_book" target="c_job">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r4">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r4_r" value="1..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r4">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Cleaner 1 ——* Job -->
+        <mxCell id="r5" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_clean" target="c_job">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5_l" value="1..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r5">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r5_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r5">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Customer 1 ——* Invoice -->
+        <mxCell id="r6" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_cust" target="c_inv">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="60" />
+              <mxPoint x="1260" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r6_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r6">
+          <mxGeometry x="-0.9" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r6_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r6">
+          <mxGeometry x="0.9" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Invoice 1 ——* InvoiceLineItem -->
+        <mxCell id="r7" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_inv" target="c_line">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r7">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r7_r" value="1..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r7">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Invoice 1 ——1 Payment -->
+        <mxCell id="r8" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_inv" target="c_pay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r8">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r8_r" value="0..1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r8">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Cleaner 1 ——* Schedule -->
+        <mxCell id="r9" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_clean" target="c_sched">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r9_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r9">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r9_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r9">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Customer 1 ——* Appointment -->
+        <mxCell id="r10" value="" style="endArrow=none;endFill=0;html=1;fontSize=10;" edge="1" parent="1" source="c_cust" target="c_appt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="640" />
+              <mxPoint x="530" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r10_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r10">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r10_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r10">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

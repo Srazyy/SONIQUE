@@ -1,0 +1,226 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SONIQUE_Analysis_Class_Diagram" id="sonique_class_01">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="SONIQUE — Analysis-Level Class Diagram" style="text;html=1;fontSize=18;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: User ===== -->
+        <mxCell id="c_user" value="&lt;b&gt;User&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user_attr" value="- userId : String {PK}&#10;- sessionId : String&#10;- browserAgent : String&#10;- hasLocationPermission : Boolean&#10;- hasMicrophonePermission : Boolean" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_user">
+          <mxGeometry y="30" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user_ops" value="+ grantPermissions() : void&#10;+ startRecording() : AudioRecording&#10;+ viewHistory() : List&lt;SoundRecord&gt;&#10;+ applyFilter(type) : List&lt;SoundRecord&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_user">
+          <mxGeometry y="115" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: AudioRecording ===== -->
+        <mxCell id="c_audio" value="&lt;b&gt;AudioRecording&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="260" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="c_audio_attr" value="- recordingId : String {PK}&#10;- audioBlob : Blob (WebM/Opus)&#10;- duration : Float (seconds)&#10;- sampleRate : Integer&#10;- channels : Integer&#10;- mimeType : String&#10;- fileSize : Integer (bytes)&#10;- recordedAt : DateTime" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_audio">
+          <mxGeometry y="30" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c_audio_ops" value="+ startCapture(mediaStream) : void&#10;+ stopCapture() : Blob&#10;+ convertToWAV() : WAVFile&#10;+ getWaveformData() : Float[]" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_audio">
+          <mxGeometry y="145" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: GeoLocation ===== -->
+        <mxCell id="c_geo" value="&lt;b&gt;GeoLocation&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="370" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_geo_attr" value="- latitude : Float (-90 to 90)&#10;- longitude : Float (-180 to 180)&#10;- accuracy : Float (metres)&#10;- timestamp : DateTime" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_geo">
+          <mxGeometry y="30" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c_geo_ops" value="+ getCurrentPosition() : GeoLocation&#10;+ toLatLng() : [Float, Float]&#10;+ distanceTo(other) : Float" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_geo">
+          <mxGeometry y="105" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: ClassificationRequest ===== -->
+        <mxCell id="c_req" value="&lt;b&gt;ClassificationRequest&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_req_attr" value="- requestId : String {PK}&#10;- audioFile : WAVFile&#10;- location : GeoLocation&#10;- requestedAt : DateTime&#10;- processingTimeMs : Integer" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_req">
+          <mxGeometry y="30" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_req_ops" value="+ upload(audio, lat, lon) : void&#10;+ convertAudio() : WAVFile&#10;+ process() : ClassificationResult&#10;+ getProcessingTime() : Integer" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_req">
+          <mxGeometry y="115" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: ClassificationResult ===== -->
+        <mxCell id="c_result" value="&lt;b&gt;ClassificationResult&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="780" y="80" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="c_result_attr" value="- resultId : String {PK}&#10;- requestId : String {FK}&#10;- topLabel : String&#10;- topConfidence : Float (0-100)&#10;- classifiedAt : DateTime" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_result">
+          <mxGeometry y="30" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_result_ops" value="+ getTop3() : List&lt;Prediction&gt;&#10;+ isHighConfidence() : Boolean&#10;+ toJSON() : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_result">
+          <mxGeometry y="115" width="270" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: Prediction ===== -->
+        <mxCell id="c_pred" value="&lt;b&gt;Prediction&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="780" y="370" width="270" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pred_attr" value="- predictionId : Integer {PK}&#10;- resultId : String {FK}&#10;- label : String (521 AudioSet classes)&#10;- confidence : Float (0-100)&#10;- rank : Integer (1, 2, or 3)" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_pred">
+          <mxGeometry y="30" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pred_ops" value="+ isTopPrediction() : Boolean&#10;+ getFormattedScore() : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_pred">
+          <mxGeometry y="115" width="270" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: SoundRecord ===== -->
+        <mxCell id="c_sound" value="&lt;b&gt;SoundRecord&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="80" width="260" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sound_attr" value="- id : Integer {PK, AUTO-INCREMENT}&#10;- soundLabel : String&#10;- confidence : Float&#10;- top3Predictions : String (JSON)&#10;- latitude : Float&#10;- longitude : Float&#10;- createdAt : DateTime" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_sound">
+          <mxGeometry y="30" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sound_ops" value="+ save() : Integer&#10;+ getAll() : List&lt;SoundRecord&gt;&#10;+ filterByLabel(label) : List&lt;SoundRecord&gt;&#10;+ deleteAll() : void&#10;+ toMapMarker() : MapMarker" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_sound">
+          <mxGeometry y="135" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: MapMarker ===== -->
+        <mxCell id="c_marker" value="&lt;b&gt;MapMarker&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="400" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_marker_attr" value="- markerId : String&#10;- latitude : Float&#10;- longitude : Float&#10;- label : String&#10;- confidence : Float&#10;- markerColor : String (hex)" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_marker">
+          <mxGeometry y="30" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_marker_ops" value="+ addToMap(leafletMap) : void&#10;+ showPopup() : void&#10;+ getColorByCategory() : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_marker">
+          <mxGeometry y="125" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: HeatmapLayer ===== -->
+        <mxCell id="c_heat" value="&lt;b&gt;HeatmapLayer&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_heat_attr" value="- isVisible : Boolean&#10;- intensity : Float&#10;- radius : Integer&#10;- dataPoints : List&lt;[lat, lon, weight]&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_heat">
+          <mxGeometry y="30" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c_heat_ops" value="+ toggle() : void&#10;+ updateData(records) : void&#10;+ addToMap(leafletMap) : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_heat">
+          <mxGeometry y="105" width="240" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CLASS: YAMNetClassifier ===== -->
+        <mxCell id="c_yamnet" value="&lt;b&gt;YAMNetClassifier&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="400" y="660" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c_yamnet_attr" value="- modelUrl : String&#10;- classMap : Map&lt;Integer, String&gt;&#10;- numClasses : Integer = 521&#10;- isLoaded : Boolean" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_yamnet">
+          <mxGeometry y="30" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c_yamnet_ops" value="+ loadModel() : void&#10;+ classify(waveform) : {scores, embeddings}&#10;+ getTopN(scores, n) : List&lt;Prediction&gt;&#10;+ getClassName(index) : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=0;fontSize=10;" vertex="1" parent="c_yamnet">
+          <mxGeometry y="105" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RELATIONSHIPS ===== -->
+
+        <!-- User 1 ——* AudioRecording -->
+        <mxCell id="r1" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_user" target="c_audio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r1_r" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r1">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- AudioRecording 1 ——1 GeoLocation -->
+        <mxCell id="r2" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_audio" target="c_geo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r2_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r2">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- AudioRecording 1 ——1 ClassificationRequest -->
+        <mxCell id="r3" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_audio" target="c_req">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r3_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r3">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ClassificationRequest 1 ——1 ClassificationResult -->
+        <mxCell id="r4" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_req" target="c_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r4">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r4_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r4">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ClassificationResult 1 ——3 Prediction -->
+        <mxCell id="r5" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_result" target="c_pred">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r5">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r5_r" value="3" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r5">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ClassificationResult 1 ——1 SoundRecord -->
+        <mxCell id="r6" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_result" target="c_sound">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r6">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r6_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r6">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- SoundRecord 1 ——1 MapMarker -->
+        <mxCell id="r7" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_sound" target="c_marker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7_l" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r7">
+          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r7_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r7">
+          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- SoundRecord * ——1 HeatmapLayer -->
+        <mxCell id="r8" value="" style="endArrow=none;endFill=0;html=1;" edge="1" parent="1" source="c_sound" target="c_heat">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="650" />
+              <mxPoint x="180" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r8_l" value="*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r8">
+          <mxGeometry x="-0.9" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="r8_r" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;" vertex="1" connectable="0" parent="r8">
+          <mxGeometry x="0.9" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ClassificationRequest ——> YAMNetClassifier (dependency) -->
+        <mxCell id="r9" value="&lt;&lt;uses&gt;&gt;" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_req" target="c_yamnet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

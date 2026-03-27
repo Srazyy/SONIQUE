@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="JTJ_RPPM" id="jtj_rppm_full">
+    <mxGraphModel dx="1200" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Just The Job (JTJ) — Rich Picture Process Model (RPPM)" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== ACTORS (stick figures) ===== -->
+        <!-- Customer -->
+        <mxCell id="actor_cust" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Receptionist -->
+        <mxCell id="actor_recep" value="Receptionist" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Office Manager (Eileen) -->
+        <mxCell id="actor_mgr" value="Office Manager&#10;(Eileen)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="200" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Cleaners -->
+        <mxCell id="actor_clean" value="Cleaners&#10;(Team of 2-3)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="550" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PROCESS STEPS ===== -->
+
+        <!-- Step 1: Customer Contacts Office -->
+        <mxCell id="step1" value="1. Customer Contacts&#10;JTJ Office&#10;(Phone / In-Person)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: Receptionist Books Appointment -->
+        <mxCell id="step2" value="2. Receptionist Books&#10;Appointment for&#10;Office Manager Visit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3: Office Manager Visits Property -->
+        <mxCell id="step3" value="3. Office Manager Visits&#10;Property — Estimates&#10;Date &amp; Price for Job" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4: Booking Form Filled Out -->
+        <mxCell id="step4" value="4. Booking Form Filled Out&#10;(3 Copies: 1 Customer,&#10;2 Office Files)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="400" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 5: Cleaners Arrive & Clean -->
+        <mxCell id="step5" value="5. Team of Cleaners&#10;Arrive at Property &amp;&#10;Carry Out Cleaning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="510" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 6: Customer Signs Booking Form -->
+        <mxCell id="step6" value="6. Customer Signs&#10;Booking Form Copy&#10;(Job Satisfactorily Done)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="620" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 7: Signed Form Returned to Office -->
+        <mxCell id="step7" value="7. Signed Booking Form&#10;Returned to JTJ Office" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="730" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 8: Receptionist Sends Invoice -->
+        <mxCell id="step8" value="8. Receptionist Sends&#10;Invoice to Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="840" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 9: Customer Submits Payment -->
+        <mxCell id="step9" value="9. Customer Submits&#10;Payment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="950" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Step 10: Receipted Invoice Sent -->
+        <mxCell id="step10" value="10. Receptionist Sends&#10;Receipted Invoice&#10;to Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1060" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== REGULAR CLEANING BRANCH ===== -->
+        <mxCell id="step_reg1" value="11. Regular Customer&#10;Negotiates Hourly Rate&#10;&amp; Weekly Schedule" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step_reg2" value="12. Office Manager&#10;Assigns Same Cleaner&#10;Each Week" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="180" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step_reg3" value="13. Weekly Cleaning&#10;Carried Out&#10;(Same Day Each Week)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step_reg4" value="14. Monthly Invoice&#10;Sent to Regular&#10;Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOCUMENTS ===== -->
+
+        <mxCell id="doc_booking" value="Booking Form&#10;(3 Copies)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_invoice" value="Invoice" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="840" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_receipt" value="Receipted&#10;Invoice" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1060" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_schedule" value="Weekly Cleaner&#10;Schedule" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="820" y="290" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DATA STORES ===== -->
+
+        <mxCell id="ds_cust" value="Customer File" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="620" width="100" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ds_cleaner" value="Cleaner&#10;Records" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="820" y="500" width="100" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ds_office" value="Office Files&#10;(2 Copies)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="720" width="100" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== MAIN FLOW EDGES ===== -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step1" target="step2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step2" target="step3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step3" target="step4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step4" target="step5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step5" target="step6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step6" target="step7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step7" target="step8"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step8" target="step9"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step9" target="step10"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Regular branch edges -->
+        <mxCell id="er1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step_reg1" target="step_reg2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="er2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step_reg2" target="step_reg3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="er3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="step_reg3" target="step_reg4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Side edges to documents/stores -->
+        <mxCell id="es1" value="3 copies" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step4" target="doc_booking"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es2" value="files" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step4" target="ds_cust"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es3" value="2 copies" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step4" target="ds_office"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es4" value="sends" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step8" target="doc_invoice"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es5" value="sends" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step10" target="doc_receipt"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es6" value="schedule" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step_reg2" target="doc_schedule"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="es7" value="records" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="step_reg2" target="ds_cleaner"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Actor connections -->
+        <mxCell id="ea1" value="contacts" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="actor_cust" target="step1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ea2" value="books" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="actor_recep" target="step2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ea3" value="visits" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="actor_mgr" target="step3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ea4" value="cleans" style="dashed=1;html=1;fontSize=9;" edge="1" parent="1" source="actor_clean" target="step5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

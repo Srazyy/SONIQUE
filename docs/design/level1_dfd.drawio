@@ -1,0 +1,185 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SONIQUE_Level1_DFD" id="sonique_l1_dfd_01">
+    <mxGraphModel dx="1400" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="SONIQUE — Level-1 Data Flow Diagram" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- =============== EXTERNAL ENTITIES =============== -->
+
+        <!-- External Entity: User -->
+        <mxCell id="ext_user" value="User" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: Browser APIs -->
+        <mxCell id="ext_browser" value="Web Browser APIs" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="530" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: YAMNet -->
+        <mxCell id="ext_yamnet" value="YAMNet Model" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="380" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- External Entity: OpenStreetMap -->
+        <mxCell id="ext_osm" value="OpenStreetMap" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="700" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- =============== PROCESSES =============== -->
+
+        <!-- Process 1: Record Audio -->
+        <mxCell id="p1" value="1.0&#10;Record Audio" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 2: Capture Location -->
+        <mxCell id="p2" value="2.0&#10;Capture&#10;Geolocation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="300" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 3: Upload Audio -->
+        <mxCell id="p3" value="3.0&#10;Upload &amp;&#10;Convert Audio" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 4: Classify Sound -->
+        <mxCell id="p4" value="4.0&#10;Classify Sound&#10;(ML Inference)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="300" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 5: Store Results -->
+        <mxCell id="p5" value="5.0&#10;Store&#10;Results" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="500" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 6: Display on Map -->
+        <mxCell id="p6" value="6.0&#10;Display on&#10;Interactive Map" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="650" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process 7: Manage History -->
+        <mxCell id="p7" value="7.0&#10;Manage&#10;Sound History" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="650" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- =============== DATA STORES =============== -->
+
+        <!-- Data Store: Sound Database -->
+        <mxCell id="ds1" value="D1  Sound History Database (SQLite)" style="shape=partialRectangle;top=0;left=0;right=0;bottom=1;fillColor=#fff2cc;strokeColor=#d6b656;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="480" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Data Store: Temp Audio Files -->
+        <mxCell id="ds2" value="D2  Temporary Audio Files" style="shape=partialRectangle;top=0;left=0;right=0;bottom=1;fillColor=#fff2cc;strokeColor=#d6b656;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="110" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- =============== DATA FLOWS =============== -->
+
+        <!-- User → P1: Start Recording -->
+        <mxCell id="df_u_p1" value="Record Command" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_user" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Browser → P1: Microphone Audio -->
+        <mxCell id="df_b_p1" value="Microphone&#10;Audio Stream" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_browser" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Browser → P2: GPS Data -->
+        <mxCell id="df_b_p2" value="GPS&#10;Coordinates" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_browser" target="p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P1 → P3: WebM Audio -->
+        <mxCell id="df_p1_p3" value="WebM Audio File" style="html=1;fontSize=9;" edge="1" parent="1" source="p1" target="p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P2 → P3: Location Data -->
+        <mxCell id="df_p2_p3" value="Latitude, Longitude" style="html=1;fontSize=9;" edge="1" parent="1" source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P3 → DS2: Temp WAV -->
+        <mxCell id="df_p3_ds2" value="WAV File (16kHz)" style="html=1;fontSize=9;" edge="1" parent="1" source="p3" target="ds2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P3 → P4: Converted Audio + Coords -->
+        <mxCell id="df_p3_p4" value="WAV Audio +&#10;Coordinates" style="html=1;fontSize=9;" edge="1" parent="1" source="p3" target="p4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P4 → YAMNet: Audio for Classification -->
+        <mxCell id="df_p4_yamnet" value="Audio&#10;Waveform" style="html=1;fontSize=9;" edge="1" parent="1" source="p4" target="ext_yamnet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- YAMNet → P4: Predictions -->
+        <mxCell id="df_yamnet_p4" value="Predictions&#10;(Label, Score)" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_yamnet" target="p4">
+          <mxGeometry x="-0.1" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- P4 → P5: Classification Results -->
+        <mxCell id="df_p4_p5" value="Classification&#10;Results + Coords" style="html=1;fontSize=9;" edge="1" parent="1" source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P5 → DS1: Stored Record -->
+        <mxCell id="df_p5_ds1" value="Sound Record" style="html=1;fontSize=9;" edge="1" parent="1" source="p5" target="ds1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P5 → P6: Results for Display -->
+        <mxCell id="df_p5_p6" value="Display Data&#10;(Label, Score, Coords)" style="html=1;fontSize=9;" edge="1" parent="1" source="p5" target="p6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P6 → OSM: Tile Request -->
+        <mxCell id="df_p6_osm" value="Tile Requests" style="html=1;fontSize=9;" edge="1" parent="1" source="p6" target="ext_osm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- OSM → P6: Map Tiles -->
+        <mxCell id="df_osm_p6" value="Map Tiles" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_osm" target="p6">
+          <mxGeometry x="-0.1" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- P6 → User: Map Visualisation -->
+        <mxCell id="df_p6_u" value="Map with&#10;Sound Markers" style="html=1;fontSize=9;" edge="1" parent="1" source="p6" target="ext_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- DS1 → P7: History Records -->
+        <mxCell id="df_ds1_p7" value="History&#10;Records" style="html=1;fontSize=9;" edge="1" parent="1" source="ds1" target="p7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- P7 → User: History List -->
+        <mxCell id="df_p7_u" value="Sound History&#10;List / Filters" style="html=1;fontSize=9;" edge="1" parent="1" source="p7" target="ext_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User → P7: Filter/Search -->
+        <mxCell id="df_u_p7" value="Filter / Search&#10;Criteria" style="html=1;fontSize=9;" edge="1" parent="1" source="ext_user" target="p7">
+          <mxGeometry x="-0.1" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

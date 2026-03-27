@@ -1,0 +1,116 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="JTJ_Collaboration_OneOff" id="jtj_collab_01">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="JTJ — Collaboration / Communication Diagram: One-Off Job" style="text;html=1;fontSize=16;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="250" y="10" width="600" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===== OBJECTS ===== -->
+        <mxCell id="o_cust" value=":Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="o_recep" value=":Receptionist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="o_mgr" value=":Office Manager&#10;(Eileen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="o_book" value=":BookingFile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="350" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="o_clean" value=":Cleaners" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="200" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="o_inv" value=":InvoiceFile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="500" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LINKS WITH NUMBERED MESSAGES ===== -->
+
+        <!-- Customer ↔ Receptionist -->
+        <mxCell id="l1" value="1: requestBooking()&#10;14: sendInvoice()&#10;15: submitPayment()&#10;17: sendReceiptedInvoice()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=top;align=left;" edge="1" parent="1">
+          <mxGeometry x="-0.2" y="-10" relative="1" as="geometry">
+            <mxPoint x="150" y="200" as="sourcePoint" />
+            <mxPoint x="445" y="130" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Receptionist ↔ Office Manager -->
+        <mxCell id="l2" value="2: schedulePropertyVisit()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="100" as="sourcePoint" />
+            <mxPoint x="700" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Office Manager ↔ Customer -->
+        <mxCell id="l3" value="3: visitProperty(date, price)&#10;4: agreeTerms()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=bottom;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="210" as="sourcePoint" />
+            <mxPoint x="700" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Office Manager ↔ BookingFile -->
+        <mxCell id="l4" value="5: createBooking()&#10;6: return bookingFormCopy" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=middle;align=right;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="130" as="sourcePoint" />
+            <mxPoint x="770" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Office Manager ↔ Cleaners -->
+        <mxCell id="l5" value="7: assignJob()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="110" as="sourcePoint" />
+            <mxPoint x="1100" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Cleaners ↔ Customer -->
+        <mxCell id="l6" value="8: carryOutCleaning()&#10;9: requestSignature()&#10;10: return signedForm" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=bottom;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="250" as="sourcePoint" />
+            <mxPoint x="1050" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Cleaners ↔ Receptionist -->
+        <mxCell id="l7" value="11: returnSignedForm()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=top;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="250" as="sourcePoint" />
+            <mxPoint x="500" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Receptionist ↔ BookingFile -->
+        <mxCell id="l8" value="12: updateStatus(COMPLETED)" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=middle;align=left;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="130" as="sourcePoint" />
+            <mxPoint x="700" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Receptionist ↔ InvoiceFile -->
+        <mxCell id="l9" value="13: generateInvoice()&#10;16: markPaid()" style="html=1;fontSize=9;endArrow=none;endFill=0;verticalAlign=middle;align=right;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="130" as="sourcePoint" />
+            <mxPoint x="445" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
