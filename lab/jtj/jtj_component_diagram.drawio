@@ -1,0 +1,358 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="JTJ_Component_Diagram" id="jtj_comp_01">
+    <mxGraphModel dx="1600" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="JTJ — UML Component Diagram" style="text;html=1;fontSize=20;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="15" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Customer Interface ===== -->
+        <mxCell id="pkg_cust" value="&lt;&lt;subsystem&gt;&gt;&#10;Customer Interface" style="shape=folder;fontStyle=1;tabWidth=180;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="400" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Booking Request -->
+        <mxCell id="c_bookreq" value="Booking&#10;Request&#10;Handler" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Customer Portal -->
+        <mxCell id="c_custportal" value="Customer&#10;Communication" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Receiver -->
+        <mxCell id="c_payrecv" value="Payment&#10;Receiver" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Document Distribution -->
+        <mxCell id="c_docdist" value="Document&#10;Distribution" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Booking Management ===== -->
+        <mxCell id="pkg_book" value="&lt;&lt;subsystem&gt;&gt;&#10;Booking Management" style="shape=folder;fontStyle=1;tabWidth=190;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="560" y="80" width="420" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Appointment Scheduler -->
+        <mxCell id="c_appt" value="Appointment&#10;Scheduler" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Booking Creator -->
+        <mxCell id="c_bookcreate" value="Booking&#10;Creator" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Estimate Manager -->
+        <mxCell id="c_estimate" value="Property Visit&#10;&amp; Estimation" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Booking Form Manager -->
+        <mxCell id="c_formgr" value="Booking Form&#10;Manager" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Operations ===== -->
+        <mxCell id="pkg_ops" value="&lt;&lt;subsystem&gt;&gt;&#10;Operations" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="80" width="420" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Cleaner Scheduler -->
+        <mxCell id="c_cleansched" value="Cleaner&#10;Scheduler" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Job Tracker -->
+        <mxCell id="c_jobtrack" value="Job Execution&#10;Tracker" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Hours Recorder -->
+        <mxCell id="c_hours" value="Hours &amp;&#10;Attendance&#10;Recorder" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Schedule Printer -->
+        <mxCell id="c_schedprint" value="Weekly Schedule&#10;Generator" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Finance ===== -->
+        <mxCell id="pkg_fin" value="&lt;&lt;subsystem&gt;&gt;&#10;Finance &amp; Invoicing" style="shape=folder;fontStyle=1;tabWidth=190;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="440" width="400" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Invoice Generator -->
+        <mxCell id="c_invgen" value="Invoice&#10;Generator" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="500" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Processor -->
+        <mxCell id="c_payproc" value="Payment&#10;Processor" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="500" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Receipt Issuer -->
+        <mxCell id="c_receipt" value="Receipt&#10;Issuer" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="600" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Monthly Consolidation -->
+        <mxCell id="c_monthly" value="Monthly&#10;Consolidation&#10;Engine" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="600" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Data Stores ===== -->
+        <mxCell id="pkg_data" value="&lt;&lt;subsystem&gt;&gt;&#10;Data Storage" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="560" y="440" width="420" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Customer File -->
+        <mxCell id="d_cust" value="&lt;&lt;datastore&gt;&gt;&#10;Customer File" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Booking/Job File -->
+        <mxCell id="d_book" value="&lt;&lt;datastore&gt;&gt;&#10;Booking/Job&#10;File" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Cleaner File -->
+        <mxCell id="d_clean" value="&lt;&lt;datastore&gt;&gt;&#10;Cleaner File" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="610" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Invoice File -->
+        <mxCell id="d_inv" value="&lt;&lt;datastore&gt;&gt;&#10;Invoice File" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="610" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Reporting ===== -->
+        <mxCell id="pkg_report" value="&lt;&lt;subsystem&gt;&gt;&#10;Reporting" style="shape=folder;fontStyle=1;tabWidth=120;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="440" width="420" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Weekly Hours Report -->
+        <mxCell id="c_weekrpt" value="Weekly Hours&#10;Report" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="500" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Customer Report -->
+        <mxCell id="c_custrpt" value="Customer&#10;Booking Report" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="500" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PROVIDED INTERFACES (lollipops) ===== -->
+
+        <!-- Booking Request → Appointment Scheduler -->
+        <mxCell id="dep1" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_bookreq" target="c_appt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep1_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep1">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Appointment Scheduler → Estimate -->
+        <mxCell id="dep2" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_appt" target="c_estimate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep2_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep2">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Estimate → Booking Creator -->
+        <mxCell id="dep3" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_estimate" target="c_bookcreate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep3_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep3">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Booking Creator → Booking Form Manager -->
+        <mxCell id="dep4" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_bookcreate" target="c_formgr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep4_lbl" value="&lt;&lt;create&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep4">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Booking Form Manager → Document Distribution -->
+        <mxCell id="dep5" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_formgr" target="c_docdist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep5_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep5">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Booking Creator → Cleaner Scheduler -->
+        <mxCell id="dep6" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_bookcreate" target="c_cleansched">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep6_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep6">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Cleaner Scheduler → Schedule Generator -->
+        <mxCell id="dep7" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_cleansched" target="c_schedprint">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep7_lbl" value="&lt;&lt;create&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep7">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Job Tracker → Hours Recorder -->
+        <mxCell id="dep8" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_jobtrack" target="c_hours">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep8_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep8">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Job Tracker → Invoice Generator -->
+        <mxCell id="dep9" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_jobtrack" target="c_invgen">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1385" y="420" />
+              <mxPoint x="165" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep9_lbl" value="&lt;&lt;use&gt;&gt;  (on job completion)" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep9">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Invoice Generator → Monthly Consolidation -->
+        <mxCell id="dep10" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_invgen" target="c_monthly">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep10_lbl" value="&lt;&lt;use&gt;&gt;&#10;[REGULAR]" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep10">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Invoice Generator → Payment Processor -->
+        <mxCell id="dep11" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_invgen" target="c_payproc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Processor → Receipt Issuer -->
+        <mxCell id="dep12" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_payproc" target="c_receipt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep12_lbl" value="&lt;&lt;create&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep12">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Pay Receiver → Payment Processor -->
+        <mxCell id="dep13" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_payrecv" target="c_payproc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep13_lbl" value="&lt;&lt;delegate&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep13">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Receipt → Customer Communication -->
+        <mxCell id="dep14" value="" style="endArrow=open;endFill=0;dashed=1;html=1;fontSize=10;" edge="1" parent="1" source="c_receipt" target="c_custportal">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="630" />
+              <mxPoint x="40" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep14_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="dep14">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- === DATA STORE DEPENDENCIES === -->
+
+        <!-- Booking Creator → Customer File -->
+        <mxCell id="dd1" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_bookcreate" target="d_cust">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Booking Creator → Booking File -->
+        <mxCell id="dd2" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_bookcreate" target="d_book">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Cleaner Scheduler → Cleaner File -->
+        <mxCell id="dd3" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_cleansched" target="d_clean">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Invoice Generator → Invoice File -->
+        <mxCell id="dd4" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_invgen" target="d_inv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Hours → Cleaner File -->
+        <mxCell id="dd5" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_hours" target="d_clean">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Hours Report → Cleaner File -->
+        <mxCell id="dd6" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_weekrpt" target="d_clean">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Customer Report → Booking File -->
+        <mxCell id="dd7" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_custrpt" target="d_book">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1385" y="700" />
+              <mxPoint x="800" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== EXTERNAL ACTORS ===== -->
+        <mxCell id="actor_cust" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="800" width="30" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor_mgr" value="Office&#10;Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="800" width="30" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor_clean" value="Cleaners" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="800" width="30" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Actor connections -->
+        <mxCell id="ac1" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_cust" target="c_bookreq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ac2" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_cust" target="c_payrecv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ac3" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_mgr" target="c_estimate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ac4" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_clean" target="c_jobtrack">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

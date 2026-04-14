@@ -1,0 +1,194 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="SONIQUE_Component_Diagram" id="sonique_comp_01">
+    <mxGraphModel dx="1600" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="SONIQUE — UML Component Diagram" style="text;html=1;fontSize=20;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: React Frontend ===== -->
+        <mxCell id="pkg_front" value="&lt;&lt;subsystem&gt;&gt;&#10;React Frontend (Client)" style="shape=folder;fontStyle=1;tabWidth=190;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="400" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- App Container -->
+        <mxCell id="c_app" value="App&#10;Container" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="160" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Audio Recorder Component -->
+        <mxCell id="c_recorder" value="Recorder&#10;Component" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="280" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Map Component -->
+        <mxCell id="c_map" value="LiveMap&#10;Component" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- API Client -->
+        <mxCell id="c_apiclient" value="API Client&#10;(React Query)" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="420" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: Flask Backend ===== -->
+        <mxCell id="pkg_back" value="&lt;&lt;subsystem&gt;&gt;&#10;Flask Backend (Server)" style="shape=folder;fontStyle=1;tabWidth=200;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="660" y="100" width="460" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- API Request Handler -->
+        <mxCell id="c_apiserver" value="API Routes Handler&#10;(/upload, /history)" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="160" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Audio Processor -->
+        <mxCell id="c_audioproc" value="Audio Processing&#10;(FFmpeg/librosa)" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="280" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ML Classifier -->
+        <mxCell id="c_ml" value="ML Classifier&#10;(YAMNet Model)" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="280" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Data AccessLayer -->
+        <mxCell id="c_dao" value="Data Access&#10;Layer" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="420" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUBSYSTEM: External & Data ===== -->
+
+        <!-- Database -->
+        <mxCell id="pkg_db" value="&lt;&lt;subsystem&gt;&gt;&#10;Database" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="660" y="600" width="220" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_sqlite" value="&lt;&lt;datastore&gt;&gt;&#10;SQLite DB&#10;(sounds.db)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- External: Map Provider -->
+        <mxCell id="pkg_ext" value="&lt;&lt;external&gt;&gt;&#10;Tile Server" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;verticalAlign=top;spacingTop=5;align=center;" vertex="1" parent="1">
+          <mxGeometry x="260" y="600" width="230" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_osm" value="OpenStreetMap&#10;Provider" style="shape=component;align=center;spacingLeft=36;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="660" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RELATIONSHIPS (Dependencies / Interfaces) ===== -->
+
+        <!-- App -> Recorder -->
+        <mxCell id="r1" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_app" target="c_recorder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r1">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- App -> Map -->
+        <mxCell id="r2" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_app" target="c_map">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r2">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Recorder -> API Client -->
+        <mxCell id="r3" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_recorder" target="c_apiclient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r3">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Map -> API Client -->
+        <mxCell id="r4" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_map" target="c_apiclient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r4">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- INTERFACE: REST API -->
+        <mxCell id="int_rest" value="REST API&#10;(JSON/HTTP)" style="shape=providedInterface;html=1;verticalAlign=bottom;fontSize=11;fontStyle=1;align=center;labelPosition=left;verticalLabelPosition=middle;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="660" y="180" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- API Server -> Interface -->
+        <mxCell id="r5" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="c_apiserver" target="int_rest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- API Client -> Interface -->
+        <mxCell id="r6" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_apiclient" target="int_rest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="450" />
+              <mxPoint x="550" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- API Server -> Audio Processor -->
+        <mxCell id="r7" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_apiserver" target="c_audioproc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7_lbl" value="&lt;&lt;delegate&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r7">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- API Server -> ML Classifier -->
+        <mxCell id="r8" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_apiserver" target="c_ml">
+          <mxGeometry relative="1" as="geometry">
+             <Array as="points">
+                <mxPoint x="960" y="190" />
+             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r8_lbl" value="&lt;&lt;delegate&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r8">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- API Server -> DAO -->
+        <mxCell id="r9" value="" style="endArrow=open;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="c_apiserver" target="c_dao">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="190" />
+              <mxPoint x="1080" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r9_lbl" value="&lt;&lt;use&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r9">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- DAO -> Database -->
+        <mxCell id="r10" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#d6b656;" edge="1" parent="1" source="c_dao" target="d_sqlite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Map -> OSM Provider -->
+        <mxCell id="r11" value="" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1" source="c_map" target="c_osm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11_lbl" value="&lt;&lt;fetch tiles&gt;&gt;" style="edgeLabel;html=1;fontSize=9;fontStyle=2;" vertex="1" connectable="0" parent="r11">
+           <mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ACTOR -->
+        <mxCell id="actor_user" value="Browser User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="30" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="actor_user" target="pkg_front">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
